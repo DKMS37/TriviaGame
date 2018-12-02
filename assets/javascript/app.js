@@ -22,7 +22,6 @@ $(document).ready(function(){
           gameStart.stopTimer();
           $("#timer").empty();
           $("#start-page").show();
-          alert("times up!!")
           $("#timer").hide();
         }
           
