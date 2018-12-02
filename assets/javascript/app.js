@@ -3,7 +3,7 @@ $(document).ready(function(){
  // start the game when user clicks on Start button
  $("#start-button").on("click", gameStart.startTimer);
 
- 
+ });
 
  var gameStart = {
     // set the time at 60 seconds, and count down by 1 second
@@ -13,7 +13,7 @@ $(document).ready(function(){
       $("#timer").text("Time Remaining: "+ gameStart.timeRemaining);
       setInterval(gameStart.countdown, 1000);
       $("#start-page").hide();
-
+      trivia.displayQuestions();
     },
 
     countdown: function() {
@@ -24,58 +24,91 @@ $(document).ready(function(){
           $("#timer").empty();
           $("#start-page").show();
           $("#timer").hide();
-        }
-          
+        }   
     },
     
     // stop the timer and reset
     stopTimer: function(){
-        clearInterval();
-        
+        clearInterval();   
     },
-// array of objects with the questions, possible answers, and the correct answer
-    questionList = [{
-        question: "What kind of animal is a Komodo Dragon?",
-        answer: ["Bird", "Snake", "Dog", "Lizard"],
+};
+
+
+    
+    var trivia = {
+
+    displayQuestions: function(){
+        var divContainer = $("#questions-box");
+        divContainer.append('<h2>Answer the following questions:<h2>');
+        for (var i = 0; i < questionList.length; i++){
+            divContainer.append('<div id="question">' + questionList[i].question + '</div>');
+
+            var answer1 = questionList[i].answers[0];
+            var answer2 = questionList[i].answers[1];
+            var answer3 = questionList[i].answers[2];
+            var answer4 = questionList[i].answers[3];
+            
+            divContainer.append('<div class="form-check"><input class="form-check-input" type="radio" name="radio-group'+i+'" id="radio'+i+'"><label class="form-check-label-answers" id="radio'+i+'label" for="radio'+i+'">' + answer1 + '</label></div>');
+  
+            divContainer.append('<div class="form-check"><input class="form-check-input" type="radio" name="radio-group'+i+'" id="radio'+i+'"><label class="form-check-label-answers" id="radio'+i+'label" for="radio'+i+'">' + answer2 + '</label></div>');
+      
+            divContainer.append('<div class="form-check"><input class="form-check-input" type="radio" name="radio-group'+i+'" id="radio'+i+'"><label class="form-check-label-answers" id="radio'+i+'label" for="radio'+i+'">' + answer3 + '</label></div>');
+    
+            divContainer.append('<div class="form-check"><input class="form-check-input" type="radio" name="radio-group'+i+'" id="radio'+i+'"><label class="form-check-label-answers" id="radio'+i+'label" for="radio'+i+'">' + answer4 + '</label></div>');
+        
+    
+        };
+
+           var doneButton = '<button class="btn btn-primary" id="done-button" type="submit">Done</button>';
+           divContainer.append(doneButton);
+           $("#done-button").on("click", gameState.stopTimer);
+    
+      },
+    }
+
+// array of questions, possible answers, and the correct answer
+   var questionList = [
+       
+    {   question: "What kind of animal is a Komodo Dragon?",
+        answers: ["Bird", "Snake", "Dog", "Lizard"],
         correct: "Lizard"
     },
     {   question: "Which Bird has the largest wingspan of any living bird?",
-        answer: ["American Eagle", "Wandering Albatros", "Pelican", "Taiwanese Pigeon"],
+        answers: ["American Eagle", "Wandering Albatros", "Pelican", "Taiwanese Pigeon"],
         correct: "Wandering Albatros"
     },
-    {   quetions: "What kind of creature is a Portuguese Man O War?",
-        answer: ["Dog", "Cat", "Horse", "Jellyfish"],
+    {   question: "What kind of creature is a Portuguese Man O War?",
+        answers: ["Dog", "Cat", "Horse", "Jellyfish"],
         correct: "Jellyfish"
     },
     {   question: "Which creatures produce Gossamer?",
-        answer: ["Snakes", "Worms", "Spiders", "Scorpions"],
+        answers: ["Snakes", "Worms", "Spiders", "Scorpions"],
         correct: "Spiders"
     },
     {   question: "From which animal is a Mohair obtained?",
-        answer: ["Angora Goat", "Stalion Horse", "Zebra", "Monkey"],
+        answers: ["Angora Goat", "Stalion Horse", "Zebra", "Monkey"],
         correct: "Angora Goat"
     },
     {   question: "How many Arms do most Starfish have?",
-        answer: ["Six", "Five", "Two", "Ten"],
+        answers: ["Six", "Five", "Two", "Ten"],
         correct: "Five"
     },
     {   question: "What is a Cabbage White?",
-        answer: ["Rabbit", "Deer", "Turtle", "Butterfly"],
+        answers: ["Rabbit", "Deer", "Turtle", "Butterfly"],
         correct: "Butterfly"
     },
     {   question: "What is the scientific name for the trunk of an Elephant?",
-        answer: ["Canis Rufus", "Alouatta", "Proboscis", "Esox"],
+        answers: ["Canis Rufus", "Alouatta", "Proboscis", "Esox"],
         correct: "Proboscis"
     },
     {   question: "Murder is the collective noun for a group of which Bird?",
-        answer: ["Owls", "Vultures", "Kingfishers", "Crows"],
+        answers: ["Owls", "Vultures", "Kingfishers", "Crows"],
         correct: "Crows"
     },
     {   question: "Which Ape gets its name from the Malay word meaning Man of the Forest?",
-        answer: ["Orangutan", "Gorilla", "Chimpanzee", "Gibbon"],
+        answers: ["Orangutan", "Gorilla", "Chimpanzee", "Gibbon"],
         correct: "Orangutan"
-    }],
+    }]
 
 
 
-};});

@@ -13,60 +13,61 @@
 <body style= "background-image: url(https://content.invisioncic.com/r257793/monthly_2016_02/campsite_background_by_dipi11-d6x2hxy.png.752ef59e259bfdb6ab7a01ed4d9b06c4.png)">
 <div class= "container">
     <div class= "row">
-        <div class="col-md-3">
+        <div class="col-md-2">
          <!--empty-->
         </div>
-        <div class= "col-md-6 text-center">
-            <img style= "margin-bottom: -92px;" src="assets/images/madagascarlogo.png" class="img-fluid image- thumbnail text-center" alt="madagascar logo">
-           <strong><h1 style="margin-top:50px;"><span style="color: aliceblue">ANIMAL</span><span style="color: aqua">TRIVIA</span><span style="color: khaki">GAME</span></h1></strong>
+        <div class= "col-md-8 text-center">
+            <img src="assets/images/madagascarlogo.png" class="img-fluid image- thumbnail text-center" alt="madagascar logo">
+           <strong><h1 class="dispaly-3"><span style="color: aliceblue">ANIMAL</span><span style="color: aqua">TRIVIA</span><span style="color:khaki">GAME</span></h1></strong>
+           <hr>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
          <!--empty-->
         </div>
     </div>
   
     <div class= "row">
         <div class= "col-md-5">
-         <img style= "margin-top:75px;" src="assets/images/madagascar.png" class= "img-fluid" alt="madagascar family">
+         <img src="assets/images/madagascar.png" class= "img-fluid text-center" id="family-photo" alt="madagascar family">
         </div>
         <div>
-            <h2 style=" margin-left: 35px; color:rgb(204, 0, 0)" id= "timer"></h2>
+            <h2 style=" margin-left:35px; color:rgb(204, 0, 0)" id="timer"></h2>
         </div>
 
        <div class="offset col-md-1">
-          <!--empty-->
+         <!--empty-->
        </div>
 
        <div class= "col-md-6">
-            <span id="start-page">
-              <h2 style="margin-top:-18px; margin-left: 10px; color:seashell">Get Ready to Play</h2>
+            <div id="start-page" class="start-page-text">
+              <h2 style= "color:seashell">Get Ready to Play</h2>
               <strong><h6 class="text-center" style="color: yellow">Test your knowledge on this multiple choice trivia game. You have 60 seconds to answer all the questions and the game ends automatically when time has elapsed. Have Fun!</h6></strong>
-              <span class=" btn btn-primary" style="margin-left: 150px"    id="start-button"><strong>Start</strong>
-            </span></span>
+              <div class=" btn btn-primary" style="margin-left: 150px"    id="start-button"><strong>Start</strong>
+          </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class= "col-md-12" id="questions-box">
-            <div class="hidden" id="end-page">
-                 <h2 style="margin-left:50px; color:darkorange">Here are your scores:</h2>
-                 <p id="correct-answers"></p>
-                 <p id="incorrect-answers"></p>
-                 <p id="unanswered"></p>  
+        <div>
+            <div id="questions-box" style=  "font-size:16px; font-weight:bolder; color:whitesmoke"> 
             </div>
+        </div>
+
+        <div class="hidden" id="end-page">
+            <h2 style="margin-left:50px; color:darkorange">Here are your scores:</h2>
+             <p id="correct-answers"></p>
+             <p id="incorrect-answers"></p>
+             <p id="unanswered"></p>  
         </div>
     </div>
 </div> 
 
-
-
-<footer  class="static">
-    <div class="container-fluid">
+<footer class="navbar-fixed-bottom">
+    <div class="container margin-top:-65px; padding:25px;">
         <hr>
         <span class= "text-center">
             <p style="color:darkblue">DK Sangalang 2018 Copyright &copy;</p>
             <p id="copyright-small" class="text-muted"><text style="color:bisque">Images and logo featuring <i>Madagascar</i> & <i> background</i> are the property of their respective owners.</p></text>
         </span>
+    </div>
 </footer>
 
       <script 
