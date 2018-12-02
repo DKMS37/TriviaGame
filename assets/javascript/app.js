@@ -1,14 +1,14 @@
 $(document).ready(function(){
 
- // start the game when user clicks on Start button
+ // start the game when user clicks on Start button.
  $("#start-button").on("click", gameStart.startTimer);
 
  });
 
  var gameStart = {
-    // set the time at 60 seconds, and count down by 1 second
+    // set the time at 60 seconds, and count down by 1 second.
     timeRemaining : 60,
-    // start the timer, hide the start page, show the questions
+    // start the timer, hide the start page, show the questions.
     startTimer: function() {
       $("#timer").text("Time Remaining: "+ gameStart.timeRemaining);
       setInterval(gameStart.countdown, 1000);
@@ -27,7 +27,7 @@ $(document).ready(function(){
         }   
     },
     
-    // stop the timer and reset
+    // stop the timer and reset.
     stopTimer: function(){
         clearInterval();   
     },
@@ -36,7 +36,7 @@ $(document).ready(function(){
 
     
     var trivia = {
-
+        // pull questions from the array of questions, loop through them,and append to user interface.
     displayQuestions: function(){
         var divContainer = $("#questions-box");
         divContainer.append('<h2>Answer the following questions:<h2>');
